@@ -1,0 +1,37 @@
+.Restgrid {
+    display: block;
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+    /* border: 1px solid #cccccc; */
+    margin: 5px 5px 0px 0px;
+    padding: 5px 5px 5px 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.Restlist {
+    /* border: 1px solid #cccccc; */
+    margin: 5px 5px 0px 5px;
+    padding: 5px 5px 5px 5px;
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    cursor: pointer;
+}
+
+.Rating {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: rgb(103, 223, 103);
+    box-sizing: border-box;
+    color: white;
+    width: 50px;
+    height: 30px;
+    padding: 5px 5px 5px 10px;
+    align-items: center;
+    font-weight: bold;
+}

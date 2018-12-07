@@ -1,0 +1,34 @@
+.Toolbar {
+    height: auto;
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #f02637;
+    display: block;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.Item {
+    margin: 10px 0;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+.Menu, .Grid {
+    height: auto;
+    float: right;
+    box-sizing: border-box;
+    vertical-align: middle;
+    right: 0;
+}
+
+.Menu {
+    width: 10%;
+}
+
+.Grid {
+    width: 7%;
+}
