@@ -127,7 +127,7 @@ class RestaurantList extends Component {
                     <Grid key={i} item xs={space} className={space == 4 ? classes.Restgrid : classes.Restlist}
                     onClick={() => this.resClickHandler(data[i].restaurant.R.res_id)} >
                         <div style={{backgroundImage: 'url(' + data[i].restaurant.thumb + ')', height: '200px', position: 'relative'}}></div> 
-                        <div className={classes.Rating} >{data[i].restaurant.user_rating.aggregate_rating} / 5.0</div>
+                        <div className={classes.Rating} >{data[i].restaurant.user_rating.aggregate_rating}</div>
                         <div><h3>{data[i].restaurant.name}</h3></div>
                         <div>{data[i].restaurant.location.address}</div> 
                     </Grid>
