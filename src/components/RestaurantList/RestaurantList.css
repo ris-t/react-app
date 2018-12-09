@@ -16,16 +16,19 @@
     padding: 5px 5px 5px 5px;
     position: relative;
     box-sizing: border-box;
-    width: fit-content;
+    width: 750px;
+    left: 80px;
+    right: 120px;
     height: fit-content;
     display: block;
     cursor: pointer;
+    float: center;
 }
 
 .Rating {
     position: absolute;
-    top: 6px;
-    right: 6px;
+    /* right: 0px; */
+    left: 150px;
     background-color: rgb(103, 223, 103);
     box-sizing: border-box;
     color: white;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { instance as axios} from '../../axios';
 import classes from './Restaurant.css';
-import Grid from '@material-ui/core/Grid/Grid';
-import Paper from '@material-ui/core/Paper/Paper';
+import CrossImg from '../../assets/cross.png';
+import TickImg from '../../assets/tick.png';
 
 class Restaurant extends Component {
     state = {
@@ -12,8 +12,10 @@ class Restaurant extends Component {
             res_name: null,
             rating: null,
             address: null,
-            reviews: null
-        }
+            has_online_delivery: null,
+            has_table_booking: null
+        },
+        reviews: null
     }
 
     componentDidMount () {
@@ -43,44 +45,28 @@ class Restaurant extends Component {
                     img: data.featured_image,
                     res_name: data.name,
                     rating: data.user_rating.aggregate_rating,
-                    address: data.location.address
+                    address: data.location.address,
+                    has_online_delivery: data.has_online_delivery,
+                    has_table_booking: data.has_table_booking
                 }
                 this.setState({details: des});
-
-                // var sectionStyle = {
-                //     width: '100%',
-                //     height: '400px',
-                //     backgroundImage: 'url('+ data.featured_image + ')' 
-                // };
-                console.log(response);
-            //    // this.setState({details: response});
-            //    var re = <section style={{
-            //         width: '100%',
-            //         height: '400px',
-            //         backgroundImage: 'url('+ data.featured_image + ')' 
-            //     }}></section>;
-            //    return re;
-                // this.setState({details: {
-                //     img: data.featured_image,
-                //     res_name: data.name,
-                //     rating: data.user_rating.aggregate_rating,
-                //     address: data.location.address
-                // }});
+                this.getRestaurantReviews();
             })
             .catch((error) => {
                 console.log(error);
             });
     }
 
-    getRestaurantReviews = (start, count) => {
+    getRestaurantReviews = () => {
         let data = {
             'res_id': this.state.id,
-            'start': start,
-            'count': count
+            'start': 0,
+            'count': 10
         }
         axios.get('/reviews', {params: data})
-            .then(function (response) {
+            .then((response) => {
                 console.log(response);
+                this.setState({reviews: response.data.user_reviews});
             })
             .catch(function (error) {
                 console.log(error);
@@ -94,7 +80,18 @@ class Restaurant extends Component {
                 <div><h3>{this.state.details.res_name}</h3></div>
                 <div className={classes.Rating}>{this.state.details.rating} / 5.0</div>
                 <div>{this.state.details.address}</div>
-                <div>Reviews</div>
+                <br />
+                <br />
+                <div><img src={this.state.details.has_online_delivery == 0 ? TickImg : CrossImg} alt="" width="18" height="18" />Online Delivery</div>
+                <div><img src={this.state.details.has_table_booking == 0 ? TickImg : CrossImg} alt="" width="18" height="18" />Table Booking</div>
+                <br />
+                <br />
+                <br />
+                {/* <div>
+                    <div>
+                        {this.state.reviews}
+                    </div>
+                Reviews</div> */}
             </div>
         )
     }

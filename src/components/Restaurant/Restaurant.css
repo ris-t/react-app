@@ -12,15 +12,27 @@
 }
 
 .Rating {
-    position: relative;
+    position: absolute;
     right: 20px;
     float: right;
     background-color: rgb(103, 223, 103);
     box-sizing: border-box;
     color: white;
-    width: 100px;
-    height: 60px;
+    width: 80px;
+    height: 40px;
     padding: 5px 5px 5px 10px;
     align-items: center;
     font-weight: bold;
+}
+
+.Cross {
+    background-image: url('../../assets/cross.png');
+    height: 24px;
+    width: 24px;
+}
+
+.Tick {
+    background-image: url('../../assets/tick.png');
+    height: 24px;
+    width: 24px;
 }

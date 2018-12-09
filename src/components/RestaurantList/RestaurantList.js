@@ -123,11 +123,12 @@ class RestaurantList extends Component {
         }
         else {
             for (let i = 0; i < data.length; i++) {
+                
                 resList.push(
                     <Grid key={i} item xs={space} className={space == 4 ? classes.Restgrid : classes.Restlist}
                     onClick={() => this.resClickHandler(data[i].restaurant.R.res_id)} >
-                        <div style={{backgroundImage: 'url(' + data[i].restaurant.thumb + ')', height: '200px', position: 'relative'}}></div> 
-                        <div className={classes.Rating} >{data[i].restaurant.user_rating.aggregate_rating}</div>
+                        <div style={{background: 'url(' + data[i].restaurant.thumb + ') no-repeat', height: '200px', position: 'relative', left: '100px' }}> 
+                        <div className={classes.Rating} >{data[i].restaurant.user_rating.aggregate_rating}</div></div>
                         <div><h3>{data[i].restaurant.name}</h3></div>
                         <div>{data[i].restaurant.location.address}</div> 
                     </Grid>

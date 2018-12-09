@@ -10,25 +10,16 @@
     z-index: 2;
 }
 
-.Item {
-    margin: 10px 0;
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-}
-
 .Menu, .Grid {
     height: auto;
     float: right;
     box-sizing: border-box;
     vertical-align: middle;
     right: 0;
-}
-
-.Menu {
-    width: 10%;
+    cursor: pointer;
 }
 
 .Grid {
-    width: 7%;
+    width: 6%;
+    padding: 4px 0px 6px 0px;
 }
